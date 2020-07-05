@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin:0;padding:0;box-sizing:border-box;font-size: 18px;
+        }
+        body
+        {
+            background: rgb(183, 82, 250);
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        section
+        {
+            background: transparent;
+            border-radius: 3em;
+            width: 400px;
+            height: 400px;
+        }
+        .container 
+        {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 3em;
+            box-shadow: 17px 3px 32px #9900ffab !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .hourSection 
+        {
+            margin-bottom: 20px;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            color: white;
+        }
+        .hourSection span 
+        {
+            font-size: 25px;
+            font-family: Arial;
+        }
+        .timeActual 
+        {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeActual span 
+        {
+            font-family: arial;
+            font-size: 20px;
+        }
+        .imgHour 
+        {
+            width: 50%;
+            height: 50%;
+            border-radius: 55em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .imgHour img 
+        {
+            width: 100%;
+            border-radius: 13em;
+            height: 100%;
+        }
+        footer 
+        {
+            background: white;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #b752fa;
+            font-family: arial;
+        }
+        footer h3 
+        {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="hourSection">
+            <span>Hora do dia</span>
+        </div>
+        <div class="container">
+            <div class="timeActual">
+                <span class="hour">
+                    Agora são Horas
+                </span>
+            </div>
+            <div class="imgHour">
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h3>Desenvolido por Danton</h3>
+    </footer>
+
+    <script type="text/javascript">
+    var data = new Date()
+        if (data < 13){
+            var horaAtual = document.querySelector('span.hour')
+            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas da manhã</span>`
+            var imgAtual = document.querySelector('div.imgHour')
+            imgAtual.innerHTML='<img src="manha.jpg">'
+        }else if (data <= 18) {
+            var horaAtual = document.querySelector('span.hour')
+            var imgAtual = document.querySelector('div.imgHour')
+            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas da tarde</span>`
+            imgAtual.innerHTML='<img src="tarde.jpg">'
+        }else {
+            var horaAtual = document.querySelector('span.hour')
+            var imgAtual = document.querySelector('div.imgHour')
+            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas e ${data.getMinutes()} minutos da noite</span>`
+            imgAtual.innerHTML='<img src="noite.jpg">'
+        }
+    </script>
+</body>
+</html>
