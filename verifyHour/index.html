@@ -115,20 +115,22 @@
 
     <script type="text/javascript">
     var data = new Date()
-        if (data < 13){
+    var horario = data.getHours()
+    var minutos = data.getMinutes()
+        if (horario < 13){
             var horaAtual = document.querySelector('span.hour')
-            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas da manhã</span>`
+            horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas e ${minutos} minutos da manhã</span>`
             var imgAtual = document.querySelector('div.imgHour')
             imgAtual.innerHTML='<img src="manha.jpg">'
         }else if (data <= 18) {
             var horaAtual = document.querySelector('span.hour')
             var imgAtual = document.querySelector('div.imgHour')
-            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas da tarde</span>`
+            horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas  e ${minutos} minutos da tarde</span>`
             imgAtual.innerHTML='<img src="tarde.jpg">'
         }else {
             var horaAtual = document.querySelector('span.hour')
             var imgAtual = document.querySelector('div.imgHour')
-            horaAtual.innerHTML=`<span class="hour">Agora são ${data.getHours()} horas e ${data.getMinutes()} minutos da noite</span>`
+            horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas e ${minutos} minutos da noite</span>`
             imgAtual.innerHTML='<img src="noite.jpg">'
         }
     </script>
