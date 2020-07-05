@@ -32,7 +32,7 @@
             width: 100%;
             height: 100%;
             border-radius: 3em;
-            box-shadow: 17px 3px 32px #9900ffab !important;
+            box-shadow: 17px 3px 32px #9900ffab;
             justify-content: center;
             align-items: center;
         }
@@ -98,7 +98,7 @@
         <div class="hourSection">
             <span>Hora do dia</span>
         </div>
-        <div class="container">
+        <div id="teste" class="container">
             <div class="timeActual">
                 <span class="hour">
                     Agora são Horas
@@ -117,21 +117,27 @@
     var data = new Date()
     var horario = data.getHours()
     var minutos = data.getMinutes()
-        if (horario < 13){
+        if (horario < 12){
             var horaAtual = document.querySelector('span.hour')
             horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas e ${minutos} minutos da manhã</span>`
             var imgAtual = document.querySelector('div.imgHour')
             imgAtual.innerHTML='<img src="manha.jpg">'
-        }else if (data <= 18) {
+            document.body.style.background='#fffdc8'
+            document.querySelector("div.container").style.boxShadow = "17px 3px 32px #fffa7c70"
+        }else if (horario <= 18) {
             var horaAtual = document.querySelector('span.hour')
             var imgAtual = document.querySelector('div.imgHour')
             horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas  e ${minutos} minutos da tarde</span>`
             imgAtual.innerHTML='<img src="tarde.jpg">'
+            document.body.style.background='#dc9f46'
+            document.querySelector('div.container').style.boxShadow='17px 3px 32px #feebd9'
         }else {
             var horaAtual = document.querySelector('span.hour')
             var imgAtual = document.querySelector('div.imgHour')
             horaAtual.innerHTML=`<span class="hour">Agora são ${horario} horas e ${minutos} minutos da noite</span>`
             imgAtual.innerHTML='<img src="noite.jpg">'
+            document.body.style.background='#000'
+            document.querySelector('div.container').style.boxShadow='17px 3px 32px #341a21'
         }
     </script>
 </body>
