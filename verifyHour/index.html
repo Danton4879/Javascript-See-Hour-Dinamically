@@ -30,7 +30,7 @@
             flex-direction: column;
             background: white;
             width: 100%;
-            height: 100%;
+            height: 97%;
             border-radius: 3em;
             box-shadow: 17px 3px 32px #9900ffab;
             justify-content: center;
@@ -127,12 +127,14 @@
                 const mudarHorario = document.querySelector('div.timeActual span.hour')
                 const mudarImg = document.querySelector('div.imgHour')
 
-            if(horaAtual <= 12 && minutoAtual <=30){
+                console.log(minutoAtual)
+            if(horaAtual <= 12){
                 mudarHorario.innerHTML=`Agora são ${horaAtual} horas e ${minutoAtual} minutos da manhã`
                 mudarImg.innerHTML=`<img src="manha.jpg">`
                 document.body.style.background='#fffdc8'
                 document.querySelector("div.container").style.boxShadow = "17px 3px 32px #fffa7c70"
-            }else if(horaAtual < 17 && minutoAtual <= 40){
+                console.log(horaAtual)
+            }else if(horaAtual < 17){
                 mudarHorario.innerHTML=`Agora são ${horaAtual} horas e ${minutoAtual} minutos da tarde`
                 mudarImg.innerHTML=`<img src="tarde.jpg">`
                 document.body.style.background='#dc9f46'
